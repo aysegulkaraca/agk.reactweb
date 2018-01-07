@@ -7,9 +7,10 @@ const Header = () => (
       <div><Link to='/home'>Home</Link></div>
       <div><Link to='/about'>About</Link></div>
       <div><Link to='/products'>Products</Link></div>
-      <div><Link to='/contact' id="contact">Contact</Link></div>      
+      <div><a href="#openModal">Contact</a></div>     
     </div>
-  </header>
+  </header> 
 )
+
 
 export default Header

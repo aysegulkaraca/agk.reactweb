@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     
     <title>ReactWeb</title>
+
     <style>
       html{
           min-height:100%;
@@ -21,10 +22,6 @@
         padding-left: 10px;
         line-height: 20px;
       }
-      
-      a:Hover{
-        color: yellow !important;
-      }
       a:focus{
         color: red !important;
       }
@@ -36,49 +33,63 @@
         height: 100vh;
       }
 
+      .modalDialog {
+        position: fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 99999;
+        opacity:0;
+        -webkit-transition: opacity 400ms ease-in;
+        -moz-transition: opacity 400ms ease-in;
+        transition: opacity 400ms ease-in;
+        pointer-events: none;
+      }
 
-      #modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+      .modalDialog:target {
+        opacity:1;
+        pointer-events: auto;
+      }
 
-    /* Modal Content */
-    #modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-    }
-
-    /* The Close Button */
-    #close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    #close:hover,
-    #close:focus {
-        color: #000;
+      .modalDialog > div {
+        width: 300px;
+        height:300px;
+        border-radius: 50%;
+        position: relative;
+        margin: 10% auto;
+        padding: 5px 20px 13px 20px;
+        background: #8a8fff;
+        text-align: center;
+        background: -moz-linear-gradient(#bdbfea, #586cbf);
+        background: -webkit-linear-gradient(#bdbfea, #586cbf);
+        background: -o-linear-gradient(#bdbfea, #586cbf);
+      }
+      .close {
+        line-height: 25px;
         text-decoration: none;
-        cursor: pointer;
-    }
-
+        font-weight: bold;
+      }
+      .ccircle {
+        padding: 24%;
+        text-align: center;
+      }
 
     </style>
+    
   </head>
   <body>
     <div id="root"></div>
+    <div id="openModal" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <div class="ccircle">
+              <h2>Contact Page</h2>
+              <p><a href="mailto:test@test.com">test@test.com</a></p>
+            </div>
+        </div>
+      </div>
   </body>
 </html>
